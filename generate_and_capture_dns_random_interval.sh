@@ -128,7 +128,7 @@ echo "输出文件: $OUTPUT_FILE"
 # -w: 指定输出文件
 # -a duration: 指定自动停止的秒数
 # & : 在后台运行
-tshark -i "$INTERFACE" -f "port 53" -w "$OUTPUT_FILE" -a duration:"$CAPTURE_DURATION_SECONDS" &
+tshark -p -i "$INTERFACE" -f "port 53" -w "$OUTPUT_FILE" -a duration:"$CAPTURE_DURATION_SECONDS" &
 TSHARK_PID=$!
 
 # 检查 tshark 是否成功启动 (简单检查 PID)
